@@ -1,0 +1,2 @@
+@import url("tb.css") only screen and (max-width:999px);
+@import url("gttb.css") only screen and (min-width:1000px);
