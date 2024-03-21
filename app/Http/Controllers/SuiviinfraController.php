@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Parametre_idb;
 use App\Models\etat_avancement_idb;
-use App\Models\Sortie_infra_idb;
+use App\Models\sortie_infra_idb;
 use App\Models\suiviinfra;
 use App\Models\evolution_global_idb;
 use App\Models\secteuridb;
