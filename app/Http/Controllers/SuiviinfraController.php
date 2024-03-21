@@ -28,12 +28,12 @@ class SuiviinfraController extends Controller
     public function viewsuiviinfra()
     {
         // IDB Data request for views
-        //suiviinfra= new suiviinfra(); 
+        //suiviinfra= new suiviinfra();
         $data= DB::table('evolution_global_idb')->select('*')->get();
         $etat_avancement_idb = new etat_avancement_idb();
         $evolution_global_idb = new evolution_global_idb();
-       
-        $communauteidb= Sortie_infra_idb::distinct('communaute')->count('communaute');
+
+        $communauteidb= sortie_infra_idb::distinct('communaute')->count('communaute');
         // $unexecuteidb= suiviinfra::distinct('code_idb')->where('idb_en_execution','Non')->count();
         // // $unexecuteidb= suiviinfra::where('idb_en_execution','Non')->count();
         $idb_encours = $etat_avancement_idb->sum('execution_TOT');
@@ -51,7 +51,7 @@ class SuiviinfraController extends Controller
         $chantierit= etat_avancement_idb::whereIn('Province',['ITURI'])->sum('execution_TOT');
         $chantiernk= etat_avancement_idb::whereIn('Province',['NORD KIVU'])->sum('execution_TOT');
         $chantiersu= etat_avancement_idb::whereIn('Province',['SUD UBANGI'])->sum('execution_TOT');
-        
+
          //Ici c'est le nombre des chantiers en attente par province
          $a_chantiernu= etat_avancement_idb::whereIn('Province',['NORD UBANGI'])->sum('attente_TOT');
          $a_chantierkc= etat_avancement_idb::whereIn('Province',['KASAI-CENTRAL'])->sum('attente_TOT');
@@ -68,7 +68,7 @@ class SuiviinfraController extends Controller
         $realisationnk= etat_avancement_idb::whereIn('Province',['NORD KIVU'])->sum('acheves_Tot');
         $realisationsu= etat_avancement_idb::whereIn('Province',['SUD UBANGI'])->sum('acheves_Tot');
 
-        
+
         //Ici c'est le nombre des chantiers mise en oeuvre par secteur
         $washit = secteuridb::whereIn('province', ['ITURI'])->where('secteur', 'Eau')->sum('nbre');
         $educit= secteuridb::whereIn('Province',['ITURI'])->where('secteur', 'Education')->sum('nbre');
@@ -117,9 +117,9 @@ class SuiviinfraController extends Controller
         $execution_idbs = $evolution_global_idb->sum('Idb_execution');
         $attente_idbs = $evolution_global_idb->sum('Idb_attente');
         $enoeuvre_idbs = $evolution_global_idb->sum('Idb_enoeuvre');
-        
 
-        
+
+
 
        return view('dashboard.idb',compact('allchantieridb','communauteidb','idb_encours','achevedchantier','idb_enoeuvre',
        'idb_attente','chantiernu','chantierkc','chantiersu','chantiersk','chantiernk','chantierit','a_chantiernu','a_chantierkc','a_chantiersu','a_chantiersk','a_chantiernk','a_chantierit','realisationnu',
@@ -127,7 +127,7 @@ class SuiviinfraController extends Controller
        'objectif_idb_su','objectif_idb_sk','objectif_idb_nk','objectif_idb_it','data','obj2020_2021','obj2021_2022','obj2022_2023','obj2023_2024',
         'total_idbs','acheved_idbs','execution_idbs','attente_idbs','enoeuvre_idbs','washsu','educsu','santsu',
         'washnu','educnu','santnu','washkc','educkc','santkc','washit','educit','santit','washsk','educsk','santsk',
-        'washnk','educnk','santnk' 
+        'washnk','educnk','santnk'
     ));
     }
 }
