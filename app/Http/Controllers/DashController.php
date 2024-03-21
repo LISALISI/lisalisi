@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Beneficiaries_tmi;
-use App\Models\Parametre_tmi;
-use App\Models\Parametre_idb;
-use App\Models\Sortie_infra_idb;
-use App\Models\Parametre_cerc;
-use App\Models\Beneficiaries_cerc;
+use App\Models\beneficiaries_tmi;
+use App\Models\parametre_tmi;
+use App\Models\parametre_idb;
+use App\Models\sortie_infra_idb;
+use App\Models\parametre_cerc;
+use App\Models\beneficiaries_cerc;
 
 class DashController extends Controller
 {
@@ -32,7 +32,7 @@ class DashController extends Controller
     {
 
         // TMI Data request for views
-        $beneficiaries_tmi = new Beneficiaries_tmi();
+        $beneficiaries_tmi = new beneficiaries_tmi();
         $beneftmi= $beneficiaries_tmi->countbeneficiaries_tmi();
         $prov= $beneficiaries_tmi::distinct('province')->count('province');
         $communautetmi= $beneficiaries_tmi::distinct('groupement')->count('groupement');
@@ -41,8 +41,8 @@ class DashController extends Controller
         $tm3= $beneficiaries_tmi->sum('tm3_montant_paye');
         $tm4= $beneficiaries_tmi->sum('tm4_montant_paye');
         $totalmontanttmi=$tm1 + $tm2 + $tm3 + $tm4;
-        $femme= Beneficiaries_tmi::where('sexe','Femme')->count();
-        $homme= Beneficiaries_tmi::where('sexe','Homme')->count();
+        $femme= beneficiaries_tmi::where('sexe','Femme')->count();
+        $homme= beneficiaries_tmi::where('sexe','Homme')->count();
         // $ch= tmi::where('status_human','CH')->count();
         // $d= tmi::where('status_human','D')->count();
         // $dm= tmi::where('status_human','DM')->count();
@@ -54,25 +54,25 @@ class DashController extends Controller
         // $refo= tmi::where('status_human','REFO')->count();
 
     // TMI Data realisation by location ** Ben
-        $nu= Beneficiaries_tmi::where('province','Nord-Ubangi')->count();
-        $it= Beneficiaries_tmi::where('province','ITURI')->count();
-        $kc= Beneficiaries_tmi::where('province','Kassai-Central')->count();
-        $sk= Beneficiaries_tmi::where('province','Sud-Kivu')->count();
-        $nk= Beneficiaries_tmi::where('province','Nord-Kivu')->count();
-        $su= Beneficiaries_tmi::where('province','Sud_Ubangui')->count();
+        $nu= beneficiaries_tmi::where('province','Nord-Ubangi')->count();
+        $it= beneficiaries_tmi::where('province','ITURI')->count();
+        $kc= beneficiaries_tmi::where('province','Kassai-Central')->count();
+        $sk= beneficiaries_tmi::where('province','Sud-Kivu')->count();
+        $nk= beneficiaries_tmi::where('province','Nord-Kivu')->count();
+        $su= beneficiaries_tmi::where('province','Sud_Ubangui')->count();
     // TMI End data realisation by location
 
         // TMI Data realisation by objectifs and location ** Ben
-        $nuobjectif= Parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
-        $itobjectif= Parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
-        $kcobjectif= Parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
-        $skobjectif= Parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
-        $nkobjectif= Parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
-        $suobjectif= Parametre_tmi::whereIn('province',['Sud_Ubangui'])->sum('objectif');
+        $nuobjectif= parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
+        $itobjectif= parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
+        $kcobjectif= parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
+        $skobjectif= parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
+        $nkobjectif= parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
+        $suobjectif= parametre_tmi::whereIn('province',['Sud_Ubangui'])->sum('objectif');
     // TMI End data realisation by objectif and location
 
         // CERC Data request for views
-        $beneficiaries_cerc = new Beneficiaries_cerc();
+        $beneficiaries_cerc = new beneficiaries_cerc();
         $provcerc= $beneficiaries_cerc::distinct('province')->count('province');
         $benefcerc= $beneficiaries_cerc->countbeneficiaries_cerc();
         $partenairecerc= $beneficiaries_cerc::distinct('Operateur')->count('Operateur');
@@ -88,22 +88,22 @@ class DashController extends Controller
 
 
     // CERC Data realisation by operator ** Ben
-        $af= Beneficiaries_cerc::where('Operateur','Afrimoney')->count();
-        $gd= Beneficiaries_cerc::where('Operateur','GiveDirectly')->count();
-        $gp= Beneficiaries_cerc::where('Operateur','GeoPoll')->count();
+        $af= beneficiaries_cerc::where('Operateur','Afrimoney')->count();
+        $gd= beneficiaries_cerc::where('Operateur','GiveDirectly')->count();
+        $gp= beneficiaries_cerc::where('Operateur','GeoPoll')->count();
 
     // CERC End data realisation by operator
 
         // CERC Data realisation by objectifs and location ** Ben
-        $afobjectif= Parametre_cerc::whereIn('Operateur',['Afrimoney'])->sum('objectifs_contrat');
-        $gdobjectif= Parametre_cerc::whereIn('Operateur',['GiveDirectly'])->sum('objectifs_contrat');
-        $gpobjectif= Parametre_cerc::whereIn('Operateur',['GeoPoll'])->sum('objectifs_contrat');
+        $afobjectif= parametre_cerc::whereIn('Operateur',['Afrimoney'])->sum('objectifs_contrat');
+        $gdobjectif= parametre_cerc::whereIn('Operateur',['GiveDirectly'])->sum('objectifs_contrat');
+        $gpobjectif= parametre_cerc::whereIn('Operateur',['GeoPoll'])->sum('objectifs_contrat');
 
         // CERC End data realisation by objectif and location
 
 
         // IDB Data request for views
-        $sortie_infra_idb = new Sortie_infra_idb();
+        $sortie_infra_idb = new sortie_infra_idb();
         $nombrechantier= $sortie_infra_idb->countsortie_infra_idb();
         $providb= $sortie_infra_idb::distinct('province')->count('province');
         // $partenairidb= $sortie_infra_idb::distinct('Operateur')->count('Operateur');
@@ -113,21 +113,21 @@ class DashController extends Controller
 
 
         // IDB Data realisation by location ** Ben
-        $nuidb= Sortie_infra_idb::where('province','NORD UBANGI')->count();
-        $itidb= Sortie_infra_idb::where('province','ITURI')->count();
-        $kcidb= Sortie_infra_idb::where('province','KASAI-CENTRAL')->count();
-        $skidb= Sortie_infra_idb::where('province','SUD KIVU')->count();
-        $nkidb= Sortie_infra_idb::where('province','NORD KIVU')->count();
-        $suidb= Sortie_infra_idb::where('province','SUD UBANGI')->count();
+        $nuidb= sortie_infra_idb::where('province','NORD UBANGI')->count();
+        $itidb= sortie_infra_idb::where('province','ITURI')->count();
+        $kcidb= sortie_infra_idb::where('province','KASAI-CENTRAL')->count();
+        $skidb= sortie_infra_idb::where('province','SUD KIVU')->count();
+        $nkidb= sortie_infra_idb::where('province','NORD KIVU')->count();
+        $suidb= sortie_infra_idb::where('province','SUD UBANGI')->count();
         // IDB End data realisation by location
 
          // idb Data realisation by objectifs and location ** Ben
-        $nuidbobjectif= Parametre_idb::where('province',['NORD UBANGI'])->sum('objectif');
-        $itidbobjectif= Parametre_idb::where('province',['ITURI'])->sum('objectif');
-        $kcidbobjectif= Parametre_idb::where('province',['KASAI-CENTRAL'])->sum('objectif');
-        $skidbobjectif= Parametre_idb::where('province',['SUD KIVU'])->sum('objectif');
-        $nkidbobjectif= Parametre_idb::where('province',['NORD KIVU'])->sum('objectif');
-        $suidbobjectif= Parametre_idb::where('province',['SUD UBANGI'])->sum('objectif');
+        $nuidbobjectif= parametre_idb::where('province',['NORD UBANGI'])->sum('objectif');
+        $itidbobjectif= parametre_idb::where('province',['ITURI'])->sum('objectif');
+        $kcidbobjectif= parametre_idb::where('province',['KASAI-CENTRAL'])->sum('objectif');
+        $skidbobjectif= parametre_idb::where('province',['SUD KIVU'])->sum('objectif');
+        $nkidbobjectif= parametre_idb::where('province',['NORD KIVU'])->sum('objectif');
+        $suidbobjectif= parametre_idb::where('province',['SUD UBANGI'])->sum('objectif');
 
          //idb End data realisation by objectif and location
 
