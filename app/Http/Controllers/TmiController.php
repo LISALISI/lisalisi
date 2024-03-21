@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\evolution_tmis;
 use Illuminate\Http\Request;
-use App\Models\Beneficiaries_tmi;
-use App\Models\Parametre_tmi;
+use App\Models\beneficiaries_tmi;
+use App\Models\parametre_tmi;
 use Illuminate\Support\Facades\DB;
 
 class TmiController extends Controller
@@ -24,11 +24,11 @@ class TmiController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function viewtmi()
-     
+
     {
-    
+
         // TMI Data request for views
-        $beneficiaries_tmi = new Beneficiaries_tmi();
+        $beneficiaries_tmi = new beneficiaries_tmi();
         $evolution_tmis = new evolution_tmis();
         $beneftmi= $beneficiaries_tmi->countbeneficiaries_tmi();
         $data= DB::table('evolution_tmis')->select('*')->groupBy('province')->get();
@@ -66,24 +66,24 @@ class TmiController extends Controller
         $refo= beneficiaries_tmi::where('status_human','REFO')->count();
 
     // TMI Data realisation by location ** Ben
-        $nu= Beneficiaries_tmi::where('province','Nord-Ubangi')->count();
-        $it= Beneficiaries_tmi::where('province','ITURI')->count();
-        $kc= Beneficiaries_tmi::where('province','Kassai-Central')->count();
-        $sk= Beneficiaries_tmi::where('province','Sud-Kivu')->count();
-        $nk= Beneficiaries_tmi::where('province','Nord-Kivu')->count();
-        $su= Beneficiaries_tmi::where('province','SUD-UBANGI')->count();
+        $nu= beneficiaries_tmi::where('province','Nord-Ubangi')->count();
+        $it= beneficiaries_tmi::where('province','ITURI')->count();
+        $kc= beneficiaries_tmi::where('province','Kassai-Central')->count();
+        $sk= beneficiaries_tmi::where('province','Sud-Kivu')->count();
+        $nk= beneficiaries_tmi::where('province','Nord-Kivu')->count();
+        $su= beneficiaries_tmi::where('province','SUD-UBANGI')->count();
     // TMI End data realisation by location
 
         // TMI Data realisation by objectifs and location ** Ben
-        $nuobjectif= Parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
-        $itobjectif= Parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
-        $kcobjectif= Parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
-        $skobjectif= Parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
-        $nkobjectif= Parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
-        $suobjectif= Parametre_tmi::whereIn('province',['SUD-UBANGI'])->sum('objectif');
+        $nuobjectif= parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
+        $itobjectif= parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
+        $kcobjectif= parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
+        $skobjectif= parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
+        $nkobjectif= parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
+        $suobjectif= parametre_tmi::whereIn('province',['SUD-UBANGI'])->sum('objectif');
     // TMI End data realisation by objectif and location
-        
-        
+
+
         // // Evolution global du STEP
         // $globalmontant= $cerctotalmontant + $totalmontanttmi + $coutrealisation;
         // $globalbenef= $benefcerc + $beneftmi;
@@ -94,19 +94,19 @@ class TmiController extends Controller
         return view('dashboard.tmi',compact('beneftmi','prov','communautetmi','totalmontanttmi','femme','homme','nu','it','kc','sk','nk','su','nuobjectif',
         'itobjectif','kcobjectif','skobjectif','nkobjectif','suobjectif','ch','r','refo','re','rt','rf','d','dm','dmc',
         'data','Tot_communaute','Tot_benef','Tot_Montant','Nbre_tm1','Montant_tm1','Nbre_tm2','Montant_tm2','Nbre_tm3','Montant_tm3','Nbre_tm4','Montant_tm4'));
-        
-        
+
+
         // if(is_int($prov)){
         //     $prov=[];
         // }
         // return view('dash')->with('benef',$benef)->with('prov',$prov);
 
-            
+
     }
 //     public function listetmi()
-     
+
 //     {
-        
-  
+
+
 // }
 }
