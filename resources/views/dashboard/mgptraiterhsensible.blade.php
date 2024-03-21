@@ -17,8 +17,20 @@
                              </a>
                              <a href="javascript:void(0)" onclick="requalifierPlainte({{$plainte_selected->Id}})" type="button" class="btn btn-outline-primary" title="Requalifier plainte" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#div_requalifier_plainte">Requalifier</a>
                              <a href="javascript:void(0)" onclick="solutionPlainte({{$plainte_selected->Id}})" type="button" class="btn btn-outline-primary" title="Solution plainte" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#div_solution_plainte">Solution</a>
+                             @if ($plainte_selected->Statut_plainte_end!="cloture")
                              <a href="{{url('cloturer_plainte_hsensible/'.$plainte_selected->Id)}}" onclick="return confirm('Etes-vous sûr de vouloir clôturer ?')" class="btn btn-outline-primary" title="Cl&ocirc;turer plainte">Cl&ocirc;turer</a>
-                        </div>
+                             @endif
+                             @if ($plainte_selected->Statut_plainte_end=="cloture")
+                                <a href="javascript:void(0)" onclick="uploadPV({{$plainte_selected->Id}})" type="button" class="btn btn-outline-primary" title="UploaderPV" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#div_upload">
+                                    @if ($plainte_selected->Pv_traitement=="")
+                                    UploadPV
+                                    @else
+                                    ModifierPV
+                                    @endif
+                                </a>
+                             @endif
+
+                            </div>
 
                      <div class="col-md-2 mb-1">
                         <input type="text" required id="searchTicket" name="searchTicket" class="form-control searchTicket" placeholder="Ticket" />
@@ -323,14 +335,50 @@
                             <div class="row mb-3">
                             <div class="col-md-2 mb-1"><span class="p-2 border rounded-pill text-white bg-primary"><strong>R1</strong></span></div><div class="col-md-4 mb-1"><div class="border bg-light p-2"><strong><textarea name="proposition_1" class="proposition_1" cols="30" rows="3" disabled> {{$plainte_selected->Proposition_1}}</textarea>   </strong></div></div>
                             <div class="col-md-2 mb-1"><span class="p-2 border rounded-pill text-white bg-success"><strong>R&eacute;sultat 1</strong></span></div><div class="col-md-4 mb-1"><div class="border bg-light p-2"><strong><input type="text" name="fplaignant" id="fplaignant" value="{{$plainte_selected->Feedback_plaingant}}" disabled> </strong></div></div>
+                            <tr><td><span class="badge badge-danger">
+                                <?php
+                                 $date1 = $plainte_selected->Date_traitement;
+                                 $date2 = $plainte_selected->Start_encodage;
+                                 $diff = abs(strtotime($date1) - strtotime($date2));
+                                 $years = floor($diff / (365*60*60*24));
+                                 $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                 printf("%d année(s), %d mois, %d jour(s)\n", $years, $months, $days);
+                                ?>
+
+                                </span></td>
+                            </tr>
+
                             </div>
                            @endif
                            @if ($plainte_selected->Proposition_2)
                                 <div class="row">
                                     <div class="col-md-2 mb-1"><span class="p-2 border rounded-pill text-white bg-primary"><strong>R2</strong></span></div><div class="col-md-4 mb-1"><div class="border bg-light p-2"><strong><textarea name="proposition_2" class="proposition_2" cols="30" rows="3" disabled> {{$plainte_selected->Proposition_2}}</textarea></strong></div></div>
                                     <div class="col-md-2 mb-1"><span class="p-2 border rounded-pill text-white bg-success"><strong>R&eacute;sultat 2</strong></span></div><div class="col-md-4 mb-1"><div class="border bg-light p-2"><strong><input type="text" name="fplaignant_2" id="fplaignant_2" value="{{$plainte_selected->Feedback_plaignant2}}" disabled> </strong></div></div>
+                                    <tr><td><h5><span class="badge badge-secondary">Date de deuxième traitement</span></h5></td></tr>
+                                <tr><td>{{date('d-m-Y', strtotime($plainte_selected->Date_traitement2))}}</td></tr>
+                                <tr><td><h5><span class="badge badge-secondary">Deuxième durée traitement</span></h5></td></tr>
+                                <tr><td><span class="badge badge-danger">
+                                    <?php
+                                     $date1 = $plainte_selected->Date_traitement2;
+                                     $date2 = $plainte_selected->Date_traitement;
+                                     $diff = abs(strtotime($date1) - strtotime($date2));
+                                     $years = floor($diff / (365*60*60*24));
+                                     $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                     $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                     printf("%d année(s), %d mois, %d jour(s)\n", $years, $months, $days);
+                                     ?>
+                              </span>  </td></tr>
                                 </div>
                            @endif
+
+                            @if ($plainte_selected->Pv_traitement)
+                            <table>
+                                    <tr><td><h5><span class="badge badge-secondary">PV de clôture</span></h5></td></tr>
+                                    <tr><td><a href="{{asset('pv/'.$plainte_selected->Pv_traitement)}}" target="blank">Cliquez ici pour visualiser</a> </td></tr>
+
+                                </table>
+                            @endif
                             </div>
                         </div>
                     </div>
@@ -429,6 +477,49 @@
                                                 </div>
                                            </div>
                                  </div>
+
+                                 <div class="modal-footer">
+                                    <button type="submit" id="btn_addpc" class="btn btn-success">Valider</button>
+                                 </div>
+
+                             </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="div_upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Upload PV Cloture Plainte</h5>
+                                <button type="button" onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+
+                                <form id="form_pv_plainte" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+                                            <div class="alert alert-danger text-center" id="ReppvKoDiv" style="display:none">
+                                                 <p id="pv_msg_ko" class="text-danger"></p>
+                                            </div>
+                                            <div class="alert alert-success text-center" id="ReppvOkDiv" style="display:none">
+                                                <p id="pv_msg_ok" class="text-success"></p>
+                                            </div>
+                                    </div>
+
+                                   <div class="form-label-group">
+                                        <label for="moms">PDF|JPG|PNG <= 1M </label>
+                                        <input type="hidden" class="form-control" name="id_plainte_selected" id="id_plainte_selected" autocomplete="off">
+                                        <input type="file" class="form-control" name="pv_file" id="pv_file" autocomplete="off">
+
+                                        <span class="text-danger error-text pv_file_error"></span>
+                                  </div>
 
                                  <div class="modal-footer">
                                     <button type="submit" id="btn_addpc" class="btn btn-success">Valider</button>
@@ -690,7 +781,13 @@ auto fill search result
             }
 
 
+            function uploadPV(Id){
+                $.get('/requalifier_plainte/'+Id, function(selectPlainteById){
+                    $("#id_plainte_selected").val(selectPlainteById.Id);
 
+                    $("#div_upload").modal('toggle');
+                });
+            }
 
 
             $(document).ready(function () {
@@ -767,6 +864,51 @@ auto fill search result
         });
     });
 });
+
+
+
+
+
+
+
+
+$(function(){
+    $("#form_pv_plainte").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            url:"{{url('upd_pv_hs_plainte')}}",
+            data:new FormData(this),
+            type:'post',
+            processData:false,
+            dataType:'json',
+            enctype: 'multipart/form-data',
+            timeout: 600000,
+            contentType:false,
+            beforeSend:function(){
+                $(document).find('span.error-text').text('');
+            },
+
+            success:function(data){
+                if(data.status == 0){
+                    $('#ReppvKoDiv').toggle("slide");
+                    $("#pv_msg_ko").text(data.msg);
+                    $.each(data.error, function(prefix, val){
+                        $('span.'+prefix+'_error').text(val[0]);
+                    });
+                }else{
+                  //  $('#second_form')[0].reset();
+                    $('#ReppvOkDiv').toggle("slide");
+                    $("#pv_msg_ok").text(data.msg);
+
+                }
+            }
+
+
+        });
+    });
+});
+
+
 
 
 

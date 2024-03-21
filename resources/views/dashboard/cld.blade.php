@@ -153,54 +153,121 @@
               <div class="mb-2"><h4><span class="badge badge-primary">CLD</span></h4></div>
                 <div class="table-responsive-lg">
                   <table width="100%" cellpadding="3" border="2">
-                      <tr>
-                        <td rowspan="2"><div class="p-2 text-dark text-center bggris fw-bold">Activit&eacute;s</div></td>
-                        <td colspan="3"><div class="p-2 text-dark text-center bgora1 fw-bold">OBJECTIFS</div></td>
-                        <td rowspan="2"><div class="p-2 text-dark text-center bgora2 fw-bold h-100">Total Ajust&eacute;</div></td>
-                        <td colspan="4"><div class="p-2 text-white text-center bg-primary fw-bold">Situation au 30 Avril 2023</div></td>
+                      <tr align="center">
+                        <th></th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th bgcolor="#fff2cc">OBJECTIFS</th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th></th>
+                        <th colspan="3" bgcolor="#6fd0ff">SITUATION AU 30 AVRIL 2023</th>
+                      </tr>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">ACTIVITES</th>
+                        <th bgcolor="#fff2cc">2020-2021</th>
+                        <th bgcolor="#fff2cc">2022</th>
+                        <th bgcolor="#fff2cc">2023-2024</th>
+                        <th bgcolor="#fbe5d6">TOTAL AJUSTE</th>
+                        <th bgcolor="#79e7b4">ACHEVES</th>
+                        <th bgcolor="#fff137">EN COURS</th>
+                        <th bgcolor="#ff7888">NON REALISES</th>
                       </tr>
                       <tr>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2020-2021</div></td>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2022</div></td>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2022-2023</div></td>
-                        <td><div class="p-2 text-white text-center bg-success fw-bold">Achev&eacute;s</div></td>
-                        <td><div class="p-2 text-white text-center bg-warning fw-bold">En cours</div></td>
-                        <td><div class="p-2 text-white text-center bg-danger fw-bold">Non r&eacute;alis&eacute;s</div></td>
+                        <td bgcolor="#bdd7ee">CHARTES SIGNEES</td>
+                        <td align="center">{{$cible_chartes2021}}</td>
+                        <td align="center">{{$cible_chartes2022}}</td>
+                        <td align="center">{{$cible_chartes2023}}</td>
+                        <td align="center">{{$Tota_ciblecharte}}</td>
+                        <td align="center">{{$Nbrechartes}}</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark text-center p-1 bgblu1 fw-bold">Chartes Sign&eacute;s</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cible_chartes2021}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cible_chartes2022}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cible_chartes2023}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$Tota_ciblecharte}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$Nbrechartes}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">FORMATIONS CLD</td>
+                        <td align="center">{{$cibleforma_realisation2021}}</td>
+                        <td align="center">{{$cibleforma_realisation2022}}</td>
+                        <td align="center">{{$cibleforma_realisation2023}}</td>
+                        <td align="center">{{$cibleNbreforma}}</td>
+                        <td align="center">{{$Nbreforma}}</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark text-center p-1 bgblu1 fw-bold">Formations CLD</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cibleforma_realisation2021}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cibleforma_realisation2022}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cibleforma_realisation2023}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cibleNbreforma}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$Nbreforma}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                      </tr>
-                      <tr>
-                        <td valign="middle"><div class="bono text-dark text-center p-1 bgblu1 fw-bold">Construction Bureaux</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$Total_cld}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$bureaux_cld_acheves}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$Nbre_cld_encours}}</div></td>
-                        <td valign="middle"><div class="bono p-1 text-center">{{$cld_en_attente}}</div></td>
+                        <td bgcolor="#bdd7ee">CONSTRUCTION BUREAUX</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">{{$Total_cld}}</td>
+                        <td align="center">{{$bureaux_cld_acheves}}</td>
+                        <td align="center">{{$Nbre_cld_encours}}</td>
+                        <td align="center">{{$cld_en_attente}}</td>
                       </tr>
                   </table>
+                  <div class="text-center mt-2"><button type="button" class="btn btn-sm btn-secondary" onclick="tableToCSV()">download CSV</button></div>
                 </div>
               </div>
               <!--/ Responsive Table -->
+
+	<script type="text/javascript">
+		function tableToCSV() {
+
+			// Variable to store the final csv data
+			let csv_data = [];
+
+			// Get each row data
+			let rows = document.getElementsByTagName('tr');
+			for (let i = 0; i < rows.length; i++) {
+
+				// Get each column data
+				let cols = rows[i].querySelectorAll('td,th');
+
+				// Stores each csv row data
+				let csvrow = [];
+				for (let j = 0; j < cols.length; j++) {
+
+					// Get the text data of each cell
+					// of a row and push it to csvrow
+					csvrow.push(cols[j].innerHTML);
+				}
+
+				// Combine each column value with comma
+				csv_data.push(csvrow.join(","));
+			}
+
+			// Combine each row data with new line character
+			csv_data = csv_data.join('\n');
+
+			// Call this function to download csv file 
+			downloadCSVFile(csv_data);
+
+		}
+
+		function downloadCSVFile(csv_data) {
+
+			// Create CSV file object and feed
+			// our csv_data into it
+			CSVFile = new Blob([csv_data], {
+				type: "text/csv"
+			});
+
+			// Create to temporary link to initiate
+			// download process
+			let temp_link = document.createElement('a');
+
+			// Download csv file
+			temp_link.download = "CLD.csv";
+			let url = window.URL.createObjectURL(CSVFile);
+			temp_link.href = url;
+
+			// This link should not be displayed
+			temp_link.style.display = "none";
+			document.body.appendChild(temp_link);
+
+			// Automatically click the link to
+			// trigger download
+			temp_link.click();
+			document.body.removeChild(temp_link);
+		}
+	</script>
 
 <script type="text/javascript" src="{{asset('assets/apexcharts/js/apexcharts.min.js')}}"></script>
 

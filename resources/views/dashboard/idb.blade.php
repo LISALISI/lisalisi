@@ -159,63 +159,130 @@
                 </div>
               </div>
 
+
               <!-- Responsive Table -->
               <div class="card p-3 mb-2">
-              <div class="mb-2"><h4><span class="badge badge-primary">IDB</span></h4></div>
+                <div class="mb-2"><h4><span class="badge badge-primary">IDB</span></h4></div>
                 <div class="table-responsive-lg">
                   <table width="100%" cellpadding="3" border="2">
-                      <tr>
-                        <td rowspan="2"><div class="p-2 text-dark text-center bggris fw-bold">Provinces</div></td>
-                        <td colspan="3"><div class="p-2 text-dark text-center bgora1 fw-bold">OBJECTIFS</div></td>
-                        <td rowspan="2"><div class="p-2 text-dark text-center bgora2 fw-bold h-100">Total Ajust&eacute;</div></td>
-                        <td colspan="4"><div class="p-2 text-white text-center bg-primary fw-bold">R&Eacute;ALISATIONS</div></td>
+                  <tr align="center">
+                        <th></th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th bgcolor="#fff2cc">OBJECTIFS</th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th></th>
+                        <th colspan="4" bgcolor="#6fd0ff">REALISATIONS</th>
                       </tr>
-                      <tr>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2020-2021</div></td>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2021-2022</div></td>
-                        <td><div class="p-2 text-dark text-center bgora1 fw-bold">2022-2023</div></td>
-                        <td><div class="p-2 text-white text-center bg-info fw-bold">Mis en Oeuvre</div></td>
-                        <td><div class="p-2 text-white text-center bg-warning fw-bold">En cours</div></td>
-                        <td><div class="p-2 text-white text-center bg-success fw-bold">Achev&eacute;s</div></td>
-                        <td><div class="p-2 text-white text-center bg-danger fw-bold">En attente</div></td>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">PROVINCES</th>
+                        <th bgcolor="#fff2cc">2020-2021</th>
+                        <th bgcolor="#fff2cc">2022</th>
+                        <th bgcolor="#fff2cc">2022-2023</th>
+                        <th bgcolor="#fbe5d6">TOTAL AJUSTE</th>
+                        <th bgcolor="#2eeaff">MIS EN OEUVRE</th>
+                        <th bgcolor="#fff137">EN COURS</th>
+                        <th bgcolor="#79e7b4">ACHEVES</th>
+                        <th bgcolor="#ff7888">EN ATTENTE</th>
                       </tr>
+
                       @foreach($data as $row)  
 
                       <tr>
-                        <td><div class="bono text-dark text-center p-1 bgblu1 fw-bold">{{$row->province}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$row->P2020_2021}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 w-100 bgora1">{{$row->P2021_2022}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$row->P2022_2023}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$row->Total_Idbs}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora2 fw-bold">{{$row->Idb_enoeuvre}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$row->Idb_execution}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$row->Chantier_Acheve}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$row->Idb_attente}}</div></td>
-                       </tr>
+                        <td bgcolor="#bdd7ee">{{$row->province}}</td>
+                        <td align="center">{{$row->P2020_2021}}</td>
+                        <td align="center">{{$row->P2021_2022}}</td>
+                        <td align="center">{{$row->P2022_2023}}</td>
+                        <td align="center">{{$row->Total_Idbs}}</td>
+                        <td align="center">{{$row->Idb_enoeuvre}}</td>
+                        <td align="center">{{$row->Idb_execution}}</td>
+                        <td align="center">{{$row->Chantier_Acheve}}</td>
+                        <td align="center">{{$row->Idb_attente}}</td>
+                      </tr>
 
                       @endforeach
 
-                      <tr>
-                        <td><div class="bono text-dark text-center p-1 bgblu1 fw-bold">Totaux</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$obj2020_2021}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 w-100 bgora1">{{$obj2021_2022}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$obj2022_2023}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora1">{{$total_idbs}}</div></td>
-                        <td><div class="bono text-dark text-center p-1 bgora2 fw-bold">{{$enoeuvre_idbs}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$execution_idbs}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$acheved_idbs}}</div></td>
-                        <td><div class="bono text-dark text-center p-1">{{$attente_idbs}}</div></td>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">TOTAUX</th>
+                        <th bgcolor="#eeeeee">{{$obj2020_2021}}</th>
+                        <th bgcolor="#eeeeee">{{$obj2021_2022}}</th>
+                        <th bgcolor="#eeeeee">{{$obj2022_2023}}</th>
+                        <th bgcolor="#eeeeee">{{$total_idbs}}</th>
+                        <th bgcolor="#eeeeee">{{$enoeuvre_idbs}}</th>
+                        <th bgcolor="#eeeeee">{{$execution_idbs}}</th>
+                        <th bgcolor="#eeeeee">{{$acheved_idbs}}</th>
+                        <th bgcolor="#eeeeee">{{$attente_idbs}}</th>
                       </tr>
                     
                   </table>
+                  <div class="text-center mt-2"><button type="button" class="btn btn-sm btn-secondary" onclick="tableToCSV()">download CSV</button></div>
               </div>
             </div>
+            <script type="text/javascript">
+		function tableToCSV() {
+
+			// Variable to store the final csv data
+			let csv_data = [];
+
+			// Get each row data
+			let rows = document.getElementsByTagName('tr');
+			for (let i = 0; i < rows.length; i++) {
+
+				// Get each column data
+				let cols = rows[i].querySelectorAll('td,th');
+
+				// Stores each csv row data
+				let csvrow = [];
+				for (let j = 0; j < cols.length; j++) {
+
+					// Get the text data of each cell
+					// of a row and push it to csvrow
+					csvrow.push(cols[j].innerHTML);
+				}
+
+				// Combine each column value with comma
+				csv_data.push(csvrow.join(","));
+			}
+
+			// Combine each row data with new line character
+			csv_data = csv_data.join('\n');
+
+			// Call this function to download csv file 
+			downloadCSVFile(csv_data);
+
+		}
+
+		function downloadCSVFile(csv_data) {
+
+			// Create CSV file object and feed
+			// our csv_data into it
+			CSVFile = new Blob([csv_data], {
+				type: "text/csv"
+			});
+
+			// Create to temporary link to initiate
+			// download process
+			let temp_link = document.createElement('a');
+
+			// Download csv file
+			temp_link.download = "IDB.csv";
+			let url = window.URL.createObjectURL(CSVFile);
+			temp_link.href = url;
+
+			// This link should not be displayed
+			temp_link.style.display = "none";
+			document.body.appendChild(temp_link);
+
+			// Automatically click the link to
+			// trigger download
+			temp_link.click();
+			document.body.removeChild(temp_link);
+		}
+	</script>
             
 
 <script type="text/javascript" src="{{asset('assets/apexcharts/js/apexcharts.min.js')}}"></script>
 
 <script type='text/javascript'>
-
 
 // Chart 13
 

@@ -13,6 +13,7 @@ use App\Models\complain;
 use App\Models\Mgp_process;
 use App\Models\Mgp_hsensible;
 use Illuminate\Support\Facades\DB;
+use Validator;
 
 class MgpController extends Controller
 {
@@ -57,7 +58,7 @@ class MgpController extends Controller
         $data_type = Type::orderBy('nom_type','asc')->get();
         $data_composante = Composante::orderBy('nom_composante','asc')->get();
         $data_statut = Statut::orderBy('nom_statut','asc')->get();
-        $data_plainte = Mgp_process::orderBy('End_encodage','desc')->get();
+        $data_plainte = Mgp_process::orderBy('End_encodage','desc')->paginate(10);
 
 
 
@@ -81,9 +82,8 @@ class MgpController extends Controller
         $data_type = Type::orderBy('nom_type','asc')->get();
         $data_composante = Composante::orderBy('nom_composante','asc')->get();
         $data_statut = Statut::orderBy('nom_statut','asc')->get();
-        $data_plainte = DB::select("SELECT * FROM mgp_hsensible Order by End_encodage desc");
-
-
+        // $data_plainte = DB::select("SELECT * FROM mgp_hsensible Order by End_encodage desc");
+        $data_plainte = Mgp_hsensible::orderBy('End_encodage','desc')->paginate(10);
 
         return view('dashboard/mgpliste_hsensible', [
             'data_province' => $data_province,
@@ -665,6 +665,76 @@ class MgpController extends Controller
           //return response()->json($msg);
 
         // return redirect('show_plainte/'.$IdPlainte)->with('msg','Plainte requalifiee avec succes');
+
+    }
+
+
+    public function pvPlainte(Request $request)
+    {
+
+        $validator = Validator::make($request->all(),[
+            'pv_file'=>'required:png,jpg,jpeg,doc,pdf,docx,zip|max:10000'
+        ]);
+        if(!$validator->passes()){
+            return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+        }else{
+
+               $pv_file=$request->file('pv_file');
+
+                $renametitle1=strtolower(trim($pv_file->getClientOriginalName()));
+                $renametitle2=$pv_file->getClientOriginalExtension();
+                $renametitle=time().'.'.$renametitle1;
+
+
+            // $renametitle=time().'.'.$title->getClientOriginalExtension();
+            $dest=public_path('/pv');
+            $pv_file->move($dest,$renametitle);
+            // $values = [
+            //      'Pv_traitement'=>$renametitle
+            // ];
+            $pv_upd = DB::update('UPDATE mgp_process set Pv_traitement=? WHERE  Id = ?', [$renametitle, $request->id_plainte_selected]);
+
+            if($pv_upd){
+                return response()->json(['status'=>1, 'msg'=>'PV attaché avec succes']);
+                }else{
+                    return response()->json(['status'=>0, 'msg'=>'Une erreur sest produite']);
+                }
+        }
+
+    }
+
+
+    public function pvHSPlainte(Request $request)
+    {
+
+        $validator = Validator::make($request->all(),[
+            'pv_file'=>'required:png,jpg,jpeg,doc,pdf,docx,zip|max:10000'
+        ]);
+        if(!$validator->passes()){
+            return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+        }else{
+
+               $pv_file=$request->file('pv_file');
+
+                $renametitle1=strtolower(trim($pv_file->getClientOriginalName()));
+                $renametitle2=$pv_file->getClientOriginalExtension();
+                $renametitle=time().'.'.$renametitle1;
+
+
+            // $renametitle=time().'.'.$title->getClientOriginalExtension();
+            $dest=public_path('/pv');
+            $pv_file->move($dest,$renametitle);
+            // $values = [
+            //      'Pv_traitement'=>$renametitle
+            // ];
+            $pv_upd = DB::update('UPDATE mgp_hsensible set Pv_traitement=? WHERE  Id = ?', [$renametitle, $request->id_plainte_selected]);
+
+            if($pv_upd){
+                return response()->json(['status'=>1, 'msg'=>'PV attaché avec succes']);
+                }else{
+                    return response()->json(['status'=>0, 'msg'=>'Une erreur sest produite']);
+                }
+        }
 
     }
 

@@ -113,6 +113,8 @@ Route::middleware([
     Route::get('requalifier_plainte/{Id}', [MgpController::class,'requalifierPlaintebyId']);
     Route::post('upd_requalifier_plainte', [MgpController::class,'requalifierPlainte']);
     Route::post('upd_requalifier_plainte_hsensible', [MgpController::class,'requalifierPlainteHsensible']);
+    Route::post('upd_pv_plainte', [MgpController::class,'pvPlainte']);
+    Route::post('upd_pv_hs_plainte', [MgpController::class,'pvHSPlainte']);
     Route::post('upd_solution_plainte', [MgpController::class,'solutionPlainte']);
     Route::post('upd_solution_plainte_hsensible', [MgpController::class,'solutionPlainteHsensible']);
     //  Route::get('oriente_plainte/{Id_plainte}', [MgpController::class,'getPlaintebyId']);

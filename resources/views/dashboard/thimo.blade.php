@@ -226,185 +226,324 @@
               <div class="mb-2"><h4><span class="badge badge-primary">THIMO</span></h4></div>
                 <div class="table-responsive-lg">
                   <table width="100%" cellpadding="3" border="2">
-                      <tr class="">
-                        <th align="center" rowspan="2"><div class="text-center bggris p-2">Antennes</div></th>
-                        <th align="center" colspan="3"><div class="text-center bgora1 p-2">Objectif Annuels</div></th>
-                        <th align="center" rowspan="2"><div class="text-center bgora2 p-2">Total</div></th>
-                        <th align="center" colspan="3"><div class="text-center text-white bg-primary p-2">Situation au 30 Avril 2023</div></th>
+                      <tr align="center">
+                        <th></th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th bgcolor="#fff2cc">OBJECTIFS</th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th></th>
+                        <th colspan="3" bgcolor="#6fd0ff">SITUATION AU 30 AVRIL 2023</th>
                       </tr>
-                      <tr class="">
-                        <th align="center"><div class="text-center bgora1 p-2">2020-2021</div></th>
-                        <th align="center"><div class="text-center bgora1 p-2">2022</div></th>
-                        <th align="center"><div class="text-center bgora1 p-2">2023-2024</div></th>
-                        <th align="center"><div class="text-center text-white bg-success p-2">D&eacute;j&agrave; Gradu&eacute;s</div></th>
-                        <th align="center"><div class="text-center text-white bg-warning p-2">Mis en service</div></th>
-                        <th align="center"><div class="text-center text-white bg-danger p-2">Non mis en service</div></th>
-                      </tr>
-                      <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">ITURI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">ANTENNES</th>
+                        <th bgcolor="#fff2cc">2020-2021</th>
+                        <th bgcolor="#fff2cc">2022</th>
+                        <th bgcolor="#fff2cc">2023-2024</th>
+                        <th bgcolor="#fbe5d6">TOTAL</th>
+                        <th bgcolor="#79e7b4">DEJA GRADUES</th>
+                        <th bgcolor="#fff137">MIS EN SERVICE</th>
+                        <th bgcolor="#ff7888">NON MIS EN SERVICE</th>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">KASAI CENTRAL</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">ITURI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">NORD-KIVU</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">KASAI CENTRAL</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">NORD-UBANGI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">NORD-KIVU</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">SUD-KIVU</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">NORD-UBANGI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">SUD-UBANGI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">SUD-KIVU</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris fw-bold">TOTAL</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
+                        <td bgcolor="#bdd7ee">SUD-UBANGI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                      </tr>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">TOTAL</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
                       </tr>
                   </table>
+                  <div class="text-center mt-2"><button type="button" class="btn btn-sm btn-secondary" onclick="tableToCSV()">download CSV</button></div>
                 </div>
               </div>
               <!--/ Responsive Table -->
+
+	<script type="text/javascript">
+		function tableToCSV() {
+
+			// Variable to store the final csv data
+			let csv_data = [];
+
+			// Get each row data
+			let rows = document.getElementsByTagName('tr');
+			for (let i = 0; i < rows.length; i++) {
+
+				// Get each column data
+				let cols = rows[i].querySelectorAll('td,th');
+
+				// Stores each csv row data
+				let csvrow = [];
+				for (let j = 0; j < cols.length; j++) {
+
+					// Get the text data of each cell
+					// of a row and push it to csvrow
+					csvrow.push(cols[j].innerHTML);
+				}
+
+				// Combine each column value with comma
+				csv_data.push(csvrow.join(","));
+			}
+
+			// Combine each row data with new line character
+			csv_data = csv_data.join('\n');
+
+			// Call this function to download csv file 
+			downloadCSVFile(csv_data);
+
+		}
+
+		function downloadCSVFile(csv_data) {
+
+			// Create CSV file object and feed
+			// our csv_data into it
+			CSVFile = new Blob([csv_data], {
+				type: "text/csv"
+			});
+
+			// Create to temporary link to initiate
+			// download process
+			let temp_link = document.createElement('a');
+
+			// Download csv file
+			temp_link.download = "THIMO.csv";
+			let url = window.URL.createObjectURL(CSVFile);
+			temp_link.href = url;
+
+			// This link should not be displayed
+			temp_link.style.display = "none";
+			document.body.appendChild(temp_link);
+
+			// Automatically click the link to
+			// trigger download
+			temp_link.click();
+			document.body.removeChild(temp_link);
+		}
+	</script>
+
 
               <!-- Responsive Table -->
               <div class="card p-3 mb-2">
               <div class="mb-2"><h4><span class="badge badge-primary">THIMO | IDB</span></h4></div>
                 <div class="table-responsive-lg">
                   <table width="100%" cellpadding="3" border="2">
-                      <tr class="">
-                        <th align="center" rowspan="2"><div class="text-center bggris p-2">Antennes</div></th>
-                        <th align="center" colspan="3"><div class="text-center bgora1 p-2">Objectif Annuels</div></th>
-                        <th align="center" colspan="3"><div class="text-center text-white bg-primary p-2">Situation au 30 Avril 2023</div></th>
+                      <tr align="center">
+                        <th></th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th bgcolor="#fff2cc">OBJECTIFS</th>
+                        <th bgcolor="#fff2cc"></th>
+                        <th colspan="3" bgcolor="#6fd0ff">SITUATION AU 30 AVRIL 2023</th>
                       </tr>
-                      <tr class="">
-                        <th align="center"><div class="text-center bgora1 p-2">2020-2021</div></th>
-                        <th align="center"><div class="text-center bgora1 p-2">2022</div></th>
-                        <th align="center"><div class="text-center bgora1 p-2">2023-2024</div></th>
-                        <th align="center"><div class="text-center text-white bg-success p-2">Achev&eacute;s</div></th>
-                        <th align="center"><div class="text-center text-white bg-warning p-2">En cours</div></th>
-                        <th align="center"><div class="text-center text-white bg-danger p-2">Non mis en ex&eacute;cution</div></th>
-                      </tr>
-                      <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">ITURI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">ACTIVITES</th>
+                        <th bgcolor="#fff2cc">2020-2021</th>
+                        <th bgcolor="#fff2cc">2022</th>
+                        <th bgcolor="#fff2cc">2023-2024</th>
+                        <th bgcolor="#79e7b4">ACHEVES</th>
+                        <th bgcolor="#fff137">EN COURS</th>
+                        <th bgcolor="#ff7888">NON MIS EN EXECUTION</th>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">KASAI CENTRAL</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">ITURI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">NORD-KIVU</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">KASAI CENTRAL</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">NORD-UBANGI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">NORD-KIVU</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">SUD-KIVU</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">NORD-UBANGI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bgblu1 fw-bold">SUD-UBANGI</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center">0</div></td>
+                        <td bgcolor="#bdd7ee">SUD-KIVU</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
                       <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris fw-bold">S/TOTAL</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris">0</div></td>
+                        <td bgcolor="#bdd7ee">SUD-UBANGI</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
                       </tr>
-                      <tr>
-                        <td valign="middle"><div class="bono text-dark p-1 text-center bggris fw-bold">TOTAL G&Eacute;N&Eacute;RAL</div></td>
-                        <td valign="middle" colspan="3"><div class="bono text-dark p-1 text-center bggris">0</div></td>
-                        <td valign="middle" colspan="3"><div class="bono text-dark p-1 text-center bggris">0</div></td>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">S/TOTAL</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee">0</th>
+                      </tr>
+                      <tr align="center">
+                        <th bgcolor="#dddddd">TOTAL GENERAL</th>
+                        <th bgcolor="#eeeeee"></th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee"></th>
+                        <th bgcolor="#eeeeee"></th>
+                        <th bgcolor="#eeeeee">0</th>
+                        <th bgcolor="#eeeeee"></th>
                       </tr>
                   </table>
+                  <div class="text-center mt-2"><button type="button" class="btn btn-sm btn-secondary" onclick="tableToCSV2()">download CSV</button></div>
                 </div>
               </div>
               <!--/ Responsive Table -->
+
+	<script type="text/javascript">
+		function tableToCSV2() {
+
+			// Variable to store the final csv data
+			let csv_data = [];
+
+			// Get each row data
+			let rows = document.getElementsByTagName('tr');
+			for (let i = 0; i < rows.length; i++) {
+
+				// Get each column data
+				let cols = rows[i].querySelectorAll('td,th');
+
+				// Stores each csv row data
+				let csvrow = [];
+				for (let j = 0; j < cols.length; j++) {
+
+					// Get the text data of each cell
+					// of a row and push it to csvrow
+					csvrow.push(cols[j].innerHTML);
+				}
+
+				// Combine each column value with comma
+				csv_data.push(csvrow.join(","));
+			}
+
+			// Combine each row data with new line character
+			csv_data = csv_data.join('\n');
+
+			// Call this function to download csv file 
+			downloadCSVFile(csv_data);
+
+		}
+
+		function downloadCSVFile(csv_data) {
+
+			// Create CSV file object and feed
+			// our csv_data into it
+			CSVFile = new Blob([csv_data], {
+				type: "text/csv"
+			});
+
+			// Create to temporary link to initiate
+			// download process
+			let temp_link = document.createElement('a');
+
+			// Download csv file
+			temp_link.download = "THIMOIDB.csv";
+			let url = window.URL.createObjectURL(CSVFile);
+			temp_link.href = url;
+
+			// This link should not be displayed
+			temp_link.style.display = "none";
+			document.body.appendChild(temp_link);
+
+			// Automatically click the link to
+			// trigger download
+			temp_link.click();
+			document.body.removeChild(temp_link);
+		}
+	</script>
+
 
 <script type="text/javascript" src="{{asset('assets/apexcharts/js/apexcharts.min.js')}}"></script>
 

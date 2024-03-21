@@ -134,6 +134,10 @@
 
                     </tbody>
                   </table>
+
+                  <div>
+                    {{$data_plainte->onEachSide(1)->links()}}
+                  </div>
                 </div>
               </div>
               <!--/ Responsive Table -->

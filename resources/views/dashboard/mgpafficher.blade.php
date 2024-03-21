@@ -321,6 +321,23 @@
                                 <tr><td>{{$plainte_selected->Proposition_1}}</td></tr>
                                 <tr><td><h5><span class="badge badge-secondary">R&eacute;sultat 1</span></h5></td></tr>
                                 <tr><td>{{$plainte_selected->Feedback_plaingant}}</td></tr>
+                                <tr><td><h5><span class="badge badge-secondary">Date de traitement</span></h5></td></tr>
+                                <tr><td>{{date('d-m-Y', strtotime($plainte_selected->Date_traitement))}}</td></tr>
+
+                                <tr><td><h5><span class="badge badge-secondary">Durée de traitement</span></h5></td></tr>
+                                <tr><td><span class="badge badge-danger">
+                                    <?php
+                                     $date1 = $plainte_selected->Date_traitement;
+                                     $date2 = $plainte_selected->Start_encodage;
+                                     $diff = abs(strtotime($date1) - strtotime($date2));
+                                     $years = floor($diff / (365*60*60*24));
+                                     $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                     $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                     printf("%d année(s), %d mois, %d jour(s)\n", $years, $months, $days);
+                                    ?>
+
+                                    </span></td>
+                                </tr>
                             </table>
                            @endif
                            @if ($plainte_selected->Proposition_2)
@@ -329,6 +346,28 @@
                                 <tr><td>{{$plainte_selected->Proposition_1}}</td></tr>
                                 <tr><td><h5><span class="badge badge-secondary">R&eacute;sultat 2</span></h5></td></tr>
                                 <tr><td>{{$plainte_selected->Feedback_plaingant}}</td></tr>
+                                <tr><td><h5><span class="badge badge-secondary">Date de deuxième traitement</span></h5></td></tr>
+                                <tr><td>{{date('d-m-Y', strtotime($plainte_selected->Date_traitement2))}}</td></tr>
+                                <tr><td><h5><span class="badge badge-secondary">Deuxième durée traitement</span></h5></td></tr>
+                                <tr><td><span class="badge badge-danger">
+                                    <?php
+                                     $date1 = $plainte_selected->Date_traitement2;
+                                     $date2 = $plainte_selected->Date_traitement;
+                                     $diff = abs(strtotime($date1) - strtotime($date2));
+                                     $years = floor($diff / (365*60*60*24));
+                                     $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                     $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                     printf("%d année(s), %d mois, %d jour(s)\n", $years, $months, $days);
+                                     ?>
+                              </span>  </td></tr>
+                            </table>
+                           @endif
+
+                           @if ($plainte_selected->Pv_traitement)
+                           <table>
+                                <tr><td><h5><span class="badge badge-secondary">PV de clôture</span></h5></td></tr>
+                                <tr><td><a href="{{asset('public/pv/'.$plainte_selected->Pv_traitement)}}" target="blank">Cliquez ici pour visualiser</a> </td></tr>
+
                             </table>
                            @endif
                 </div>
