@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Parametre_idb;
+use App\Models\parametre_idb;
 use App\Models\etat_avancement_idb;
 use App\Models\sortie_infra_idb;
 use App\Models\suiviinfra;
@@ -101,12 +101,12 @@ class SuiviinfraController extends Controller
         // $objectif_idb_nk= $realisationnk + $a_chantiernk + $chantiernk;
         // $objectif_idb_su= $realisationsu + $a_chantiersu + $chantiersu;
 
-        $objectif_idb_nu= Parametre_idb::whereIn('province',['NORD UBANGI'])->sum('objectif');
-        $objectif_idb_kc= Parametre_idb::whereIn('province',['KASAI-CENTRAL'])->sum('objectif');
-        $objectif_idb_sk= Parametre_idb::whereIn('province',['SUD KIVU'])->sum('objectif');
-        $objectif_idb_it= Parametre_idb::whereIn('province',['ITURI'])->sum('objectif');
-        $objectif_idb_nk= Parametre_idb::whereIn('province',['NORD KIVU'])->sum('objectif');
-        $objectif_idb_su= Parametre_idb::whereIn('province',['SUD UBANGI'])->sum('objectif');
+        $objectif_idb_nu= parametre_idb::whereIn('province',['NORD UBANGI'])->sum('objectif');
+        $objectif_idb_kc= parametre_idb::whereIn('province',['KASAI-CENTRAL'])->sum('objectif');
+        $objectif_idb_sk= parametre_idb::whereIn('province',['SUD KIVU'])->sum('objectif');
+        $objectif_idb_it= parametre_idb::whereIn('province',['ITURI'])->sum('objectif');
+        $objectif_idb_nk= parametre_idb::whereIn('province',['NORD KIVU'])->sum('objectif');
+        $objectif_idb_su= parametre_idb::whereIn('province',['SUD UBANGI'])->sum('objectif');
 
         $obj2020_2021 = $evolution_global_idb->sum('P2020_2021');
         $obj2021_2022 = $evolution_global_idb->sum('P2021_2022');
