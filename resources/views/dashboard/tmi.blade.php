@@ -134,18 +134,18 @@
 @foreach($data as $row)
 
             <tr>
-          <td>{{$row->province}}</td>
-          <td>{{$row->communaute}}</td>
+          <td>{{$row->Province}}</td>
+          <td>{{$row->Communaute}}</td>
           <td>{{$row->Nbre_benef}}</td>
-          <td>{{$row->Montant_Total}}</td>
+          <td>{{$row->Montant_total}}</td>
           <td>{{$row->Nbre_TM1}}</td>
-          <td>{{$row->montant_TM1}}</td>
+          <td>{{$row->Montant_TM1}}</td>
           <td>{{$row->Nbre_TM2}}</td>
-          <td>{{$row->montant_TM2}}</td>
+          <td>{{$row->Montant_TM2}}</td>
           <td>{{$row->Nbre_TM3}}</td>
-          <td>{{$row->montant_TM3}}</td>
+          <td>{{$row->Montant_TM3}}</td>
           <td>{{$row->Nbre_TM4}}</td>
-          <td>{{$row->montant_TM4}}</td>
+          <td>{{$row->Montant_TM4}}</td>
 
           
                     </tr>
@@ -323,7 +323,7 @@
 	var options = {
 				series: [{
 				name: 'Nombre',
-				data: [{{$ch}},{{$d}},{{$dm}},{{$dmc}},{{$r}},{{$re}},{{$rf}},{{$rt}},{{$refo}}]
+				data: [{{$ch}},{{$depla}},{{$dm}},{{$pygme}},{{$r}},{{$rf}},{{$rt}},{{$refo}},{{$rfl}},{{$p}},{{$d}}]
 			  }],
 				chart: {
 				type: 'bar',
@@ -345,7 +345,7 @@
 				colors: ['transparent']
 			  },
 			  xaxis: {
-				categories: ['Communauté Hôte', 'Déplacé', 'Démobilisé', 'Démo Ex-Cobattant','R','Rétourné','Réfugié','RT','Réfoulé'],
+				categories: ['Communauté Hôte', 'Déplacé', 'Démobilisé', 'Pygmé','R','RF','RT','REFO','RFL','P','D'],
 			  },
 			  yaxis: {
 				title: {
