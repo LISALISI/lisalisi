@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\evolution_tmis;
 use Illuminate\Http\Request;
-use App\Models\beneficiaries_tmi;
-use App\Models\barametre_tmi;
+use App\Models\Beneficiaries_tmi;
+use App\Models\Parametre_tmi;
 use Illuminate\Support\Facades\DB;
 
 class TmiController extends Controller
@@ -24,11 +24,11 @@ class TmiController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function viewtmi()
-
+     
     {
-
+    
         // TMI Data request for views
-        $beneficiaries_tmi = new beneficiaries_tmi();
+        $beneficiaries_tmi = new Beneficiaries_tmi();
         $evolution_tmis = new evolution_tmis();
         $beneftmi= $beneficiaries_tmi->countbeneficiaries_tmi();
         $data= DB::table('evolution_tmi')->select('*')->get();
@@ -78,10 +78,10 @@ class TmiController extends Controller
         $p= $evolution_tmis->sum('P');
         $d= $evolution_tmis->sum('D');
 
-
-
-
-
+        
+        
+        
+        
 
     // TMI Data realisation by location ** Ben
         $nu= evolution_tmis::whereIn('province',['NORD-UBANGI'])->sum('Nbre_benef');
@@ -93,15 +93,15 @@ class TmiController extends Controller
     // TMI End data realisation by location
 
         // TMI Data realisation by objectifs and location ** Ben
-        $nuobjectif= parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
-        $itobjectif= parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
-        $kcobjectif= parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
-        $skobjectif= parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
-        $nkobjectif= parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
-        $suobjectif= parametre_tmi::whereIn('province',['SUD-UBANGI'])->sum('objectif');
+        $nuobjectif= Parametre_tmi::whereIn('province',['Nord-Ubangi'])->sum('objectif');
+        $itobjectif= Parametre_tmi::whereIn('province',['ITURI'])->sum('objectif');
+        $kcobjectif= Parametre_tmi::whereIn('province',['Kassai-Central'])->sum('objectif');
+        $skobjectif= Parametre_tmi::whereIn('province',['Sud-Kivu'])->sum('objectif');
+        $nkobjectif= Parametre_tmi::whereIn('province',['Nord-Kivu'])->sum('objectif');
+        $suobjectif= Parametre_tmi::whereIn('province',['SUD-UBANGI'])->sum('objectif');
     // TMI End data realisation by objectif and location
-
-
+        
+        
         // // Evolution global du STEP
         // $globalmontant= $cerctotalmontant + $totalmontanttmi + $coutrealisation;
         // $globalbenef= $benefcerc + $beneftmi;
@@ -111,19 +111,19 @@ class TmiController extends Controller
 
         return view('dashboard.tmi',compact('beneftmi','prov','communautetmi','totalmontanttmi','femme','homme','nu','it','kc','sk','nk','su','nuobjectif',
         'itobjectif','kcobjectif','skobjectif','nkobjectif','suobjectif','ch','r','refo','rt','rf','depla','dm','pygme','p','d','rfl','data','Tot_communaute','Tot_benef','Tot_Montant','Nbre_tm1','Montant_tm1','Nbre_tm2','Montant_tm2','Nbre_tm3','Montant_tm3','Nbre_tm4','Montant_tm4'));
-
-
+        
+        
         // if(is_int($prov)){
         //     $prov=[];
         // }
         // return view('dash')->with('benef',$benef)->with('prov',$prov);
 
-
+            
     }
 //     public function listetmi()
-
+     
 //     {
-
-
+        
+  
 // }
 }
