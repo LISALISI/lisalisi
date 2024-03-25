@@ -116,59 +116,118 @@
               <div class="mb-2"><h4><span class="badge badge-primary">Evolution des paiements individuels par distribution et par Province</span></h4></div>
                 <div class="table-responsive-lg">
                   <table width="100%" cellpadding="3" border="2">
-                    <tr class="text-nowrap">
+                    <tr align="center">
 
-                      <th><div class="bggris text-center fw-bold p-2">Provinces</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Communaut&eacute;s</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">B&eacute;n&eacute;ficiaires</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Mont_TOTAL</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Nbr_TM1</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Mont_TM1</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Nbr_TM2</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Mont_TM2</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Nbr_TM3</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Mont_TM3</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Nbr_TM4</div></th>
-                      <th><div class="bggris text-center fw-bold p-2">Mont_TM4</div></th>
+                      <th bgcolor="#dddddd">Provinces</th>
+                      <th bgcolor="#fff2cc">Communaut&eacute;s</th>
+                      <th bgcolor="#fbe5d6">B&eacute;n&eacute;ficiaires</th>
+                      <th bgcolor="#fff2cc">Mont_TOTAL</th>
+                      <th bgcolor="#fbe5d6">Nbr_TM1</th>
+                      <th bgcolor="#fff2cc">Mont_TM1</th>
+                      <th bgcolor="#fbe5d6">Nbr_TM2</th>
+                      <th bgcolor="#fff2cc">Mont_TM2</th>
+                      <th bgcolor="#fbe5d6">Nbr_TM3</th>
+                      <th bgcolor="#fff2cc">Mont_TM3</th>
+                      <th bgcolor="#fbe5d6">Nbr_TM4</th>
+                      <th bgcolor="#fff2cc">Mont_TM4</th>
                     </tr>
 @foreach($data as $row)
-
-            <tr>
-          <td>{{$row->Province}}</td>
-          <td>{{$row->Communaute}}</td>
-          <td>{{$row->Nbre_benef}}</td>
-          <td>{{$row->Montant_total}}</td>
-          <td>{{$row->Nbre_TM1}}</td>
-          <td>{{$row->Montant_TM1}}</td>
-          <td>{{$row->Nbre_TM2}}</td>
-          <td>{{$row->Montant_TM2}}</td>
-          <td>{{$row->Nbre_TM3}}</td>
-          <td>{{$row->Montant_TM3}}</td>
-          <td>{{$row->Nbre_TM4}}</td>
-          <td>{{$row->Montant_TM4}}</td>
-
-          
-                    </tr>
-           
+          <tr>
+          <td bgcolor="#bdd7ee">{{$row->Province}}</td>
+          <td align="center">{{$row->Communaute}}</td>
+          <td align="center">{{$row->Nbre_benef}}</td>
+          <td align="center">{{$row->Montant_total}}</td>
+          <td align="center">{{$row->Nbre_TM1}}</td>
+          <td align="center">{{$row->Montant_TM1}}</td>
+          <td align="center">{{$row->Nbre_TM2}}</td>
+          <td align="center">{{$row->Montant_TM2}}</td>
+          <td align="center">{{$row->Nbre_TM3}}</td>
+          <td align="center">{{$row->Montant_TM3}}</td>
+          <td align="center">{{$row->Nbre_TM4}}</td>
+          <td align="center">{{$row->Montant_TM4}}</td>
+          </tr>
 @endforeach
-<tr>
-          <td><div class="bggris text-center fw-bold p-2">Totaux</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Tot_communaute}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Tot_benef}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Tot_Montant}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Nbre_tm1}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Montant_tm1}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Nbre_tm2}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Montant_tm2}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Nbre_tm3}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Montant_tm3}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Nbre_tm4}}</div></td>
-          <td><div class="bggris text-center fw-bold p-2">{{$Montant_tm4}}</div></td>
+<tr align="center">
+          <th bgcolor="#dddddd">Totaux</th>
+          <th bgcolor="#fff2cc">{{$Tot_communaute}}</th>
+          <th bgcolor="#fbe5d6">{{$Tot_benef}}</th>
+          <th bgcolor="#fff2cc">{{$Tot_Montant}}</th>
+          <th bgcolor="#fbe5d6">{{$Nbre_tm1}}</th>
+          <th bgcolor="#fff2cc">{{$Montant_tm1}}</th>
+          <th bgcolor="#fbe5d6">{{$Nbre_tm2}}</th>
+          <th bgcolor="#fff2cc">{{$Montant_tm2}}</th>
+          <th bgcolor="#fbe5d6">{{$Nbre_tm3}}</th>
+          <th bgcolor="#fff2cc">{{$Montant_tm3}}</th>
+          <th bgcolor="#fbe5d6">{{$Nbre_tm4}}</th>
+          <th bgcolor="#fff2cc">{{$Montant_tm4}}</th>
 </tr>
                 </table>
+                <div class="text-center mt-2"><button type="button" class="btn btn-sm btn-secondary" onclick="tableToCSV()">download CSV</button></div>
               </div>
             </div>
             <!--/ Responsive Table -->
+
+	<script type="text/javascript">
+		function tableToCSV() {
+
+			// Variable to store the final csv data
+			let csv_data = [];
+
+			// Get each row data
+			let rows = document.getElementsByTagName('tr');
+			for (let i = 0; i < rows.length; i++) {
+
+				// Get each column data
+				let cols = rows[i].querySelectorAll('td,th');
+
+				// Stores each csv row data
+				let csvrow = [];
+				for (let j = 0; j < cols.length; j++) {
+
+					// Get the text data of each cell
+					// of a row and push it to csvrow
+					csvrow.push(cols[j].innerHTML);
+				}
+
+				// Combine each column value with comma
+				csv_data.push(csvrow.join(","));
+			}
+
+			// Combine each row data with new line character
+			csv_data = csv_data.join('\n');
+
+			// Call this function to download csv file 
+			downloadCSVFile(csv_data);
+
+		}
+
+		function downloadCSVFile(csv_data) {
+
+			// Create CSV file object and feed
+			// our csv_data into it
+			CSVFile = new Blob([csv_data], {
+				type: "text/csv"
+			});
+
+			// Create to temporary link to initiate
+			// download process
+			let temp_link = document.createElement('a');
+
+			// Download csv file
+			temp_link.download = "TMI.csv";
+			let url = window.URL.createObjectURL(CSVFile);
+			temp_link.href = url;
+
+			// This link should not be displayed
+			temp_link.style.display = "none";
+			document.body.appendChild(temp_link);
+
+			// Automatically click the link to
+			// trigger download
+			temp_link.click();
+			document.body.removeChild(temp_link);
+		}
+	</script>
 
 
 <script type="text/javascript" src="{{asset('assets/apexcharts/js/apexcharts.min.js')}}"></script>
